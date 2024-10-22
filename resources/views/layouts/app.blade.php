@@ -42,7 +42,7 @@
             </div>
         </div>
     </nav>
-    <marquee behavior="scroll" direction="left" style="background-color: #ae9595; color: #fff; font-size: 20px; font-weight: bold; padding: 10px;">Quiz App - Test your knowledge and skills...</marquee>
+    <marquee behavior="scroll" direction="left" style="background-color: #ae9595; color: #fff; font-size: 20px; font-weight: bold; padding: 10px;">Test your knowledge and skills...</marquee>
 
     @yield('content')
 
