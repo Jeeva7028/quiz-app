@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div class="container-fluid py-5 bg-light text-dark">
+    <div class="container-expand-lg py-5 bg-light text-dark">
         <div class="row">
             <div class="col-md-12">
                 <div class="card bg-dark text-white">
