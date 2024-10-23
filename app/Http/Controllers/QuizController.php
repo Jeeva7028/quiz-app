@@ -63,4 +63,36 @@ class QuizController extends Controller{
         ]);
     }
 
+    public function storeQuestion(Request $request)
+{
+    // Validate the incoming request
+    $validated = $request->validate([
+        'question_text' => 'required|string|max:255',
+        'option_1' => 'required|string|max:255',
+        'option_2' => 'required|string|max:255',
+        'option_3' => 'required|string|max:255',
+        'option_4' => 'required|string|max:255',
+        'correct_answer' => 'required|in:option_1,option_2,option_3,option_4',
+    ]);
+
+    // Create a new question in the database
+    Questions::create([
+        'question_text' => $validated['question_text'],
+        'option_1' => $validated['option_1'],
+        'option_2' => $validated['option_2'],
+        'option_3' => $validated['option_3'],
+        'option_4' => $validated['option_4'],
+        'correct_answer' => $validated['correct_answer'],
+    ]);
+
+    // Redirect with success message
+    return redirect()->route('questions.add')->with('success', 'Question added successfully!');
+}
+
+public function showAddQuestionForm()
+{
+    return view('pages.add-question');
+}
+
+
 }

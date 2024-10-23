@@ -40,3 +40,7 @@ Route::get('/quiz', [\App\Http\Controllers\QuizController::class, 'index'])->nam
 Route::post('/quiz', [\App\Http\Controllers\QuizController::class, 'submitQuiz'])->name('quiz.submit');
 
 Route::get('/result', [\App\Http\Controllers\QuizController::class, 'showQuiz'])->name('quiz.result');
+
+Route::get('/questions/add', [QuizController::class, 'showAddQuestionForm'])->name('questions.add');
+
+Route::post('/questions/store', [QuizController::class, 'storeQuestion'])->name('questions.store');
