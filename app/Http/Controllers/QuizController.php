@@ -72,7 +72,7 @@ class QuizController extends Controller{
         'option_2' => 'required|string|max:255',
         'option_3' => 'required|string|max:255',
         'option_4' => 'required|string|max:255',
-        'correct_answer' => 'required|in:option_1,option_2,option_3,option_4',
+        'correct_answer' => 'required|string|max:255',
     ]);
 
     // Create a new question in the database

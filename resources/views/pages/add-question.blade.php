@@ -53,13 +53,8 @@
 
                 <div class="mb-3">
                     <label for="correct_answer" class="form-label">Correct Answer</label>
-                    <select class="form-select @error('correct_answer') is-invalid @enderror" id="correct_answer" name="correct_answer">
-                        <option value="">Select the correct answer</option>
-                        <option value="option_1" {{ old('correct_answer') == 'option_1' ? 'selected' : '' }}>Option 1</option>
-                        <option value="option_2" {{ old('correct_answer') == 'option_2' ? 'selected' : '' }}>Option 2</option>
-                        <option value="option_3" {{ old('correct_answer') == 'option_3' ? 'selected' : '' }}>Option 3</option>
-                        <option value="option_4" {{ old('correct_answer') == 'option_4' ? 'selected' : '' }}>Option 4</option>
-                    </select>
+                    <input type="text" class="form-control @error('correct_answer') is-invalid @enderror" id="correct_answer" name="correct_answer" value="{{ old('correct_answer') }}">
+                    <small class="form-text text-muted">Enter the correct answer exactly as it appears in one of the options above.</small>
                     @error('correct_answer')
                         <span class="invalid-feedback" role="alert">{{ $message }}</span>
                     @enderror
